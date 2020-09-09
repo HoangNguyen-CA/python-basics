@@ -24,8 +24,32 @@ def get_sum(num1, num2):
 
 print(get_sum(1, 5))
 
+'''
+CONDITIONALS
+'''
+
+bigger = 100
+smaller = -100
+
+if bigger > smaller:
+    print(f'{bigger} is bigger than {smaller}')
+
+if bigger > smaller and True:
+    print('TRUE')
+
+if bigger > smaller or True:
+    print('Always True')
+'''
+MEMBERSHIP OPERATORS
+'''
+
+numbers = [1, 2, 3, 4, 5, 6]
+
+if 1 in numbers:
+    print('1')
+if 1 not in numbers:
+    print('not 1')
 
 '''
 LOOPS
 '''
-
