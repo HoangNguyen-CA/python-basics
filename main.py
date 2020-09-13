@@ -1,3 +1,9 @@
+from collections import deque
+
+'''
+Todo: list, set, and dictionary comprehensions
+'''
+
 person = {
     'firstname': 'Joe',
     'lastname': 'Mama'
@@ -35,6 +41,9 @@ print(arr)
 arr[1:9] = [0]
 print(arr)
 
+# you can use del keyword to delete slices or indices of an array
+del arr[:]  # this deletes the entire array
+
 # multiple assignment
 
 a, b = 1, 2
@@ -48,6 +57,7 @@ print(5 * 'helloworld ')
 
 
 def say_hello(name):
+    """this is a docstring - good idea to include these in functions to describe them."""
     print(name)
 
 
@@ -58,8 +68,22 @@ def get_sum(num1, num2):
 
 print(get_sum(1, 5))
 
-'''
-CONDITIONALS
+
+# functions without a return always returns "None".
+
+# !!! important function default values are evaluated once. if value is an object/mutable, it will retain information in future calls.
+
+def addToList(num, dList=[]):
+    dList.append(num)
+    print(dList)
+
+
+addToList(1)
+addToList(2)
+addToList(3)
+
+'''CONDITIONALS
+
 '''
 
 bigger = 100
@@ -80,10 +104,64 @@ MEMBERSHIP OPERATORS
 numbers = [1, 2, 3, 4, 5, 6]
 
 if 1 in numbers:
-    print('1')
+    print('ONE')
 if 1 not in numbers:
-    print('not 1')
+    print('NOT ONE')
 
 '''
 LOOPS
 '''
+
+for i in range(0, 5, 2):
+    print(i)
+
+# loop over indices of an array:
+
+for i in range(len(arr)):
+    print(i, arr[i])
+
+# range is iterable but doesn't construct an array to save space.
+
+print(sum(range(0, 10)));
+
+# can also construct list from iterable.
+
+list(range(0, 10))
+
+# loops can contain else statement that executes when not broken out of.
+# pass statement does nothing and is only there to avoid syntax errors.
+
+for i in range(0, 10):
+    pass
+else:
+    print("loop ended")
+
+'''
+Use collections/deque to implement a queue
+'''
+
+queue = deque([1, 2, 3])
+
+'''
+TUPLES
+Immutable arrays.
+'''
+
+tup = (1, 2, 3)
+
+'''
+SETS
+'''
+
+s = {"number", "number", "number"}
+print(s)
+
+# for empty sets, use set() since {} creates a dictionary.
+
+s = set()
+
+'''
+Dictionary
+'''
+
+dictionary = {"name": 'steve', "lastname": 'over'}
